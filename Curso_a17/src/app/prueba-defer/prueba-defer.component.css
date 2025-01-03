@@ -1,8 +1,13 @@
 article{
-    border: solid 3px pink;
+    border: solid 3px black;
     margin: 15px auto;
     padding: 20px;
     max-width: 500px;
     font-size: 32px;
 
+}
+
+img{
+    width: 100%;
+    height: auto;
 }

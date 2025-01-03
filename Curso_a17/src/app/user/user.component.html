@@ -1,0 +1,31 @@
+<p>user works!</p>
+<section>
+
+    @if (isLoggedIn) {
+    
+        <p>Bienvenido, esto es un componente de usuario, {{username}}, tomando la foto desde perfil GitHub</p>
+        
+        <!-- Abrir parentesis te da a elegir los eventos -->
+        <!-- la funcion del evento hay que darsela al user.ts -->
+        <img 
+        (click)="greet()"
+        src="https://github.com/Mr-JonatanGomez.png" 
+        alt="photo">
+
+        <button (click)="isLoggedIn = false">Log Out</button>
+
+    
+    }@else {
+    
+        <p>Inicia sesión</p>
+        <button (click)="isLoggedIn = true">Log In</button>
+    }
+    <!-- le vamos a meter al componente games un username -->
+    <app-games (addFavoriteEvent)="getFavorite($event)"
+    username="{{username}}" />
+    <!-- Metido dentro de un section que lleva style -->
+
+    @if (favGame!== "") {
+        <p>Tu juego favorito entre los elegidos es <b>{{favGame}}</b></p>
+    }
+</section>
