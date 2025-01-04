@@ -2,6 +2,8 @@
 <app-user />
 <div>
     <article>
+        ARTICUL
+        <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, ut odio aliquam a in error eligendi, nemo odit vel officiis dignissimos nisi consequuntur. Officia reprehenderit incidunt fuga eaque facilis error. <br><br>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis fuga obcaecati error repellat sint nisi unde molestias possimus totam, rerum libero eveniet, fugiat provident et, voluptatem tenetur a non? Doloremque.<br><br>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dolores eaque mollitia dolore maiores commodi, esse recusandae pariatur. Illum eligendi mollitia nemo voluptatem recusandae assumenda modi expedita similique incidunt quo.<br><br>
@@ -11,8 +13,21 @@
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, ut odio aliquam a in error eligendi, nemo odit vel officiis dignissimos nisi consequuntur. Officia reprehenderit incidunt fuga eaque facilis error. <br><br>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis fuga obcaecati error repellat sint nisi unde molestias possimus totam, rerum libero eveniet, fugiat provident et, voluptatem tenetur a non? Doloremque.<br><br>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dolores eaque mollitia dolore maiores commodi, esse recusandae pariatur. Illum eligendi mollitia nemo voluptatem recusandae assumenda modi expedita similique incidunt quo.<br><br>
+    </p>
     </article>
-    <app-prueba-defer />
+    @defer (on viewport) {
+
+        <app-prueba-defer></app-prueba-defer>
+    }@placeholder {
+        <p>.</p>
+        <!-- este elemento vacio es para poder darle
+         parametros de configuracion al @defer 
+         como el on viewport-->
+    }@loading (minimum 17s) {
+        <!-- por si carga más lento, que muestre algo mientras y 
+         podemos darle un minimo de segundos, por si quieres mostrarlo si o si-->
+        <p>cargando... </p>
+    }
 </div>
 
 
