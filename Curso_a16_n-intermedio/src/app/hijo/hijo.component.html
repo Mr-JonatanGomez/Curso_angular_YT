@@ -1,16 +1,19 @@
 <div class="card" style="width: 12rem;">
-    <img src="https://github.com/Mr-JonatanGomez.png" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card HIJO</h5>
-      <p class="card-text">Card, usada, para ver como cargar BOOTSTRAP en angular, precticando a modificar el angular.json</p>
-    </div>
+  <div class="card-body">
+    <h5 class="card-title">Card HIJO</h5>
+    
+  </div>
+  
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">2025</li>
-      <li class="list-group-item">El año del cambio</li>
-      <li class="list-group-item">A por todas!</li>
+      <p class="list-group-item">Mensaje desde padre fue: <b>{{recibeHijo}}</b> </p>
+      
+      <label for="entrada">Escribir un mensaje para el padre:</label>
+      <input type="text" id="entrada" [(ngModel)]="mensaje">
+      <button type="button" (click)="enviarMensaje()">Enviar AL PADRE</button>
+
+      <button (click)="decrementar()">Decrementar en Padre</button>
+      <button (click)="incrementar()">Incrementar en Padre</button>
+
     </ul>
-    <div class="card-body">
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
+    
   </div>
