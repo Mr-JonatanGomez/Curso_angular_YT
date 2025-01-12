@@ -43,7 +43,9 @@
       <h3 appEstiloHermanos>{{nombre}}</h3>
       <button type="button" (click)="saludar()">SALUDAR</button>
       <button type="button" (click)="preguntar()">PREGUNTAR POR HIJO</button>
-
+      
+      <!-- LE METEMOS UN PIPE A LA FECHA PARA ACORTARLA -->
+      <h3>Fecha de hoy {{fecha | date:'dd/MM/yyyy, HH:MM'}}</h3>
     </div>
 
 

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioFamiliarService } from '../servicio-familiar.service';
 import { EstiloHermanosDirective } from '../estilo-hermanos.directive';
+import { MiPipePersPipe } from '../mi-pipe-pers.pipe';
 
 @Component({
   selector: 'app-hermano-padre',
   standalone: true,
-  imports: [EstiloHermanosDirective],
+  imports: [EstiloHermanosDirective, MiPipePersPipe],
   templateUrl: './hermano-padre.component.html',
   styleUrl: './hermano-padre.component.css'
 })

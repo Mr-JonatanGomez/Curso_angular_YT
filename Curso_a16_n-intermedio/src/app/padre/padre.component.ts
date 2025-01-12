@@ -2,21 +2,25 @@ import { Component, OnInit } from '@angular/core';
 import { HijoComponent } from "../hijo/hijo.component";
 import { ServicioFamiliarService } from '../servicio-familiar.service';
 import { EstiloHermanosDirective } from '../estilo-hermanos.directive';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-padre',
   standalone: true,
-  imports: [HijoComponent, EstiloHermanosDirective],
+  imports: [HijoComponent, EstiloHermanosDirective, DatePipe],
   templateUrl: './padre.component.html',
   styleUrl: './padre.component.css'
 })
 export class PadreComponent implements OnInit{
+  nombre?: string
+  fecha?: Date = new Date()
+
+
 
   constructor(
     private _servicioFamiliar : ServicioFamiliarService
   ){}
   
-  nombre?: string
   
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
