@@ -1,6 +1,6 @@
 
 
-<div class="card" style="width: 18rem;">
+<div class="card" >
     <img src="https://github.com/Mr-JonatanGomez.png" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Card Bootstrap PADRE</h5>
@@ -10,8 +10,8 @@
       <li class="list-group-item">2025, El año del cambio</li>
  
       
-      <li class="list-group-item">El Mensaje desde el hijo:  </li>
-      <li><b>{{mensajeRecibido}}</b></li>
+      <li class="list-group-item">El Mensaje desde el hijo:  
+      <b>{{mensajeRecibido}}</b></li>
       
     </ul>
     <div class="card-body">
@@ -27,11 +27,12 @@
     <!-- <app-hijo/> -->
     <!-- Ahora vamos a usar el input, para mandar mensaje del hijo al padre -->
     <!-- <app-hijo [recibeHijo]="mensajePadre"/> -->
-    //todo no se puede meter input y output juntos parece
+   
     
     <!-- OUTPUT -->
 
     <app-hijo 
+    [recibeHijo]="mensajePadre"
     (mensajeDesdeHijo)="recibirMensaje($event)"
     (incrementarDesdeHijo)="incrementar()"
     (decrementarDesdeHijo)="decrementar()"

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HijoComponent } from "../hijo/hijo.component";
+import { ServicioFamiliarService } from '../servicio-familiar.service';
 
 @Component({
   selector: 'app-padre',
@@ -8,7 +9,23 @@ import { HijoComponent } from "../hijo/hijo.component";
   templateUrl: './padre.component.html',
   styleUrl: './padre.component.css'
 })
-export class PadreComponent {
+export class PadreComponent implements OnInit{
+
+  constructor(
+    private _servicioFamiliar : ServicioFamiliarService
+  ){}
+  
+  nombre?: string
+  
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    this._servicioFamiliar.setHermanoMayor("Juan")
+    this.nombre = this._servicioFamiliar.getHermanoMayor()
+
+}
+
+
 
   valorContador: number=0
   //INPUT
