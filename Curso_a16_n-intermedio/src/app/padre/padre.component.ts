@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { HijoComponent } from "../hijo/hijo.component";
 import { ServicioFamiliarService } from '../servicio-familiar.service';
+import { EstiloHermanosDirective } from '../estilo-hermanos.directive';
 
 @Component({
   selector: 'app-padre',
   standalone: true,
-  imports: [HijoComponent],
+  imports: [HijoComponent, EstiloHermanosDirective],
   templateUrl: './padre.component.html',
   styleUrl: './padre.component.css'
 })
@@ -20,11 +21,20 @@ export class PadreComponent implements OnInit{
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this._servicioFamiliar.setHermanoMayor("Juan")
+    this._servicioFamiliar.setHermanoMayor("Juanito")
     this.nombre = this._servicioFamiliar.getHermanoMayor()
 
 }
 
+
+saludar(){
+  this._servicioFamiliar.saludar(this._servicioFamiliar.getHermanoPequeño()||"")
+}
+
+preguntar(){
+  console.log(this._servicioFamiliar.preguntarPorHijo());
+  
+}
 
 
   valorContador: number=0

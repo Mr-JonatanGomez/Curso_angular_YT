@@ -1,6 +1,6 @@
 
 
-<div class="card" >
+<div class="card col-12" >
     <img src="https://github.com/Mr-JonatanGomez.png" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Card Bootstrap PADRE</h5>
@@ -37,6 +37,14 @@
     (incrementarDesdeHijo)="incrementar()"
     (decrementarDesdeHijo)="decrementar()"
     
-    
     />
+    <div>
+      <h4>services</h4>
+      <h3 appEstiloHermanos>{{nombre}}</h3>
+      <button type="button" (click)="saludar()">SALUDAR</button>
+      <button type="button" (click)="preguntar()">PREGUNTAR POR HIJO</button>
+
+    </div>
+
+
   </div>

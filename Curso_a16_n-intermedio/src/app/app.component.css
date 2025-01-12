@@ -168,3 +168,7 @@
       margin-block: 1.5rem;
     }
   }
+
+  .row{
+    gap: 15px;
+  }

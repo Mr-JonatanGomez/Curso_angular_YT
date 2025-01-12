@@ -16,7 +16,7 @@ export class ServicioFamiliarService {
   }
 
   getHermanoPequeño() : string {
-    return this.hermanoMayor || ""
+    return this.hermanoPequeño || ""
   }
 
   
@@ -32,6 +32,7 @@ saludar (hermano:string){
   console.log(`Hola ${hermano}`);
   
 }
+
 
 preguntarPorHijo():string{
   return "¿Como está tu hijo?"

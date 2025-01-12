@@ -1,26 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioFamiliarService } from '../servicio-familiar.service';
+import { EstiloHermanosDirective } from '../estilo-hermanos.directive';
 
 @Component({
   selector: 'app-hermano-padre',
   standalone: true,
-  imports: [],
+  imports: [EstiloHermanosDirective],
   templateUrl: './hermano-padre.component.html',
   styleUrl: './hermano-padre.component.css'
 })
 export class HermanoPadreComponent implements OnInit{
-
+  nombre?: string
+  
  constructor(
     private _servicioFamiliar : ServicioFamiliarService
   ){}
 
-nombre?: string
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     this._servicioFamiliar.setHermanoPequeño("Pedro")
-    this.nombre = this._servicioFamiliar.getHermanoPequeño()
+    this.nombre= this._servicioFamiliar.getHermanoPequeño()
+  }
+
+  saludar(){
+    this._servicioFamiliar.saludar(this._servicioFamiliar.getHermanoMayor()||"")
+  }
+  
+  preguntar(){
+    console.log(this._servicioFamiliar.preguntarPorHijo());
+    
   }
 
 }
