@@ -21,7 +21,7 @@ export class PadreComponent implements OnInit{
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this._servicioFamiliar.setHermanoMayor("Juanito")
+    this._servicioFamiliar.setHermanoMayor("juanito valderrama")
     this.nombre = this._servicioFamiliar.getHermanoMayor()
 
 }
